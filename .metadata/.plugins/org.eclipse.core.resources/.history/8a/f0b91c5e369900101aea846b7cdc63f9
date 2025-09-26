@@ -1,0 +1,20 @@
+package linkedList;
+
+public class insertAtAnyPoint {
+	
+	// Node class yaha pe InsertInHead me bani hui use ho rahi h
+	// Insert at a specific position (0-based index)
+	
+		public void insertAtAnyPoint(int data, int Position) {
+			Node<Integer> newNode = new Node<Integer>(data);  	// Node class yaha pe InsertInHead me bani hui use ho rahi h
+			
+			
+		}
+		
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

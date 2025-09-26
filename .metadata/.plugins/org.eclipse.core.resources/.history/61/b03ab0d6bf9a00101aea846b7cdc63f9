@@ -1,0 +1,26 @@
+package linkedList;
+
+public class TestingAllCode {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+	}
+
+}
+
+class linkNode<T>{
+	T data;
+	linkNode<T> next;
+	
+	public linkNode() {
+		// TODO Auto-generated constructor stub
+		this.next = null;
+	}
+	
+	public linkNode(T data){
+		this.data = data;
+		this.next = null;
+	}
+}

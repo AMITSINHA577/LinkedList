@@ -1,0 +1,42 @@
+package linkedList;
+
+public class TestingAllCode {
+
+	Node<Integer> head;
+
+	public void insertDataInToHead(int data) {
+		Node<Integer> newNode = new Node<Integer>(data);
+
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+
+		newNode.next = head;
+		head = newNode;
+
+	}
+
+	public void printData() {
+
+		Node<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		TestingAllCode obj1 = new TestingAllCode();
+		obj1.insertDataInToHead(10);
+		obj1.insertDataInToHead(10);
+		obj1.insertDataInToHead(40);
+		obj1.insertDataInToHead(30);
+		obj1.printData();
+
+	}
+
+}

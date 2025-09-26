@@ -1,0 +1,37 @@
+package linkedList;
+
+class NodeLinsk<T> {
+	T data;
+	NodeLinsk<T> next;
+
+	public NodeLinsk() {
+		this.next = null;
+	}
+
+	public NodeLinsk(T data) {
+		this.next = null;
+		this.data = data;
+	}
+}
+
+public class completeCode {
+
+	NodeLinsk<Integer> head;
+
+	public void insertInToHead(int data) {
+
+		NodeLinsk<Integer> newNode = new NodeLinsk();
+		if (head == null) {
+			newNode = head;
+			return;
+		}
+		newNode.next = head;
+		head = newNode;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

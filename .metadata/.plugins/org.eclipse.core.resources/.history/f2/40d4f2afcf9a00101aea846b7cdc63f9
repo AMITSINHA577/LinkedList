@@ -1,0 +1,51 @@
+package linkedList;
+
+class NodeLinsk<T> {
+	T data;
+	NodeLinsk<T> next;
+
+	public NodeLinsk() {
+		this.next = null;
+	}
+
+	public NodeLinsk(T data) {
+		this.next = null;
+		this.data = data;
+	}
+}
+
+public class completeCode {
+
+	NodeLinsk<Integer> head;
+
+	public void insertInToHead(int data) {
+
+		NodeLinsk<Integer> newNode = new NodeLinsk();
+		if (head == null) {
+			newNode = head;
+			return;
+		}
+		newNode.next = head;
+		head = newNode;
+	}
+
+	public void printdata() {
+		NodeLinsk<Integer> temp = head;
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+
+		completeCode obj1 = new completeCode();
+		obj1.insertInToHead(10);
+		obj1.insertInToHead(20);
+		obj1.insertInToHead(30);
+		obj1.insertInToHead(40);
+		obj1.printdata();
+
+	}
+
+}

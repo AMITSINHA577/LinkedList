@@ -1,0 +1,32 @@
+package linkedList;
+
+public class insertAtAnyPoint {
+	
+	// Insert at a specific position (0-based index)
+	
+		public void insertAtAnyPoint(int data, int Position) {
+			Node<Integer> newNode = new Node<Integer>(data);
+		}
+		
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Node1<T> {
+
+	T data;
+	Node1<T> next;
+
+	Node1() {
+		this.next = null;
+	}
+
+	Node1(T data) {
+		this.next = null;
+		this.data = data;
+	}
+}

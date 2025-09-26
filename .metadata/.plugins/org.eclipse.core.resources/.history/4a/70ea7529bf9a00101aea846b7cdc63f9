@@ -1,0 +1,31 @@
+package linkedList;
+
+public class TestingAllCode {
+
+	Node1<Integer> head;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Node1<Integer> newNode = new Node1<Integer>();
+		
+		if(head == null) {
+			
+		}
+
+	}
+
+}
+
+class Node1<T> {
+	T data;
+	Node<T> next;
+
+	public Node1() {
+		this.next = null;
+	}
+
+	Node1(T data) {
+		this.data = data;
+		this.next = null;
+	}
+}

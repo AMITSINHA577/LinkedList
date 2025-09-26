@@ -1,0 +1,16 @@
+package linkedList;
+
+public class insertTail {
+	
+	Node<Integer> head;
+	
+	public void  tailInsert() {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

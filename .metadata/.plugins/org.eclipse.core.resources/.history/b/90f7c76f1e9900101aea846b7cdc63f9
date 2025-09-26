@@ -1,0 +1,55 @@
+package linkedList;
+
+public class InsertInToHead {
+
+	Node<Integer> head;
+
+	public void InsertHead(int data) {
+
+		Node<Integer> newNode = new Node<Integer>(data);
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+
+		newNode.next = head;
+		head = newNode;
+	}
+
+	public void printListList() {
+		Node<Integer> temp = head;
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		InsertInToHead obj1 = new InsertInToHead();
+		obj1.InsertHead(10);
+		obj1.printListList();
+		obj1.InsertHead(40);
+		obj1.InsertHead(70);
+		obj1.InsertHead(20);
+		obj1.printListList();
+
+	}
+
+	public class Node<T> {
+		T data;
+		Node next;
+
+		Node() {
+			this.next = null;
+
+		}
+
+		Node(T data) {
+			this.next = null;
+			this.data = data;
+		}
+	}
+
+}

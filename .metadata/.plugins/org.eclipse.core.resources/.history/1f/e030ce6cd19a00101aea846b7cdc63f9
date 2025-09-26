@@ -1,0 +1,82 @@
+package linkedList;
+
+class NodeLinsk<T> {
+	T data;
+	NodeLinsk<T> next;
+
+	public NodeLinsk() {
+		this.next = null;
+	}
+
+	public NodeLinsk(T data) {
+		this.next = null;
+		this.data = data;
+	}
+}
+
+public class completeCode {
+
+	NodeLinsk<Integer> head;
+
+	public void insertInToHead(int data) {
+
+		NodeLinsk<Integer> newNode = new NodeLinsk<Integer>(data);
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+		newNode.next = head;
+		head = newNode;
+	}
+
+	public void insertAtAnyPositon(int index, int data) {
+		NodeLinsk<Integer> newNode = new NodeLinsk<Integer>(data);
+		if (index == 0) {
+			head = newNode;
+			return;
+		}
+
+		NodeLinsk<Integer> temp = head;
+		int currectIndex = 0;
+		while (temp != null && currectIndex < index - 1) {
+			currectIndex++;
+			temp = temp.next;
+		}
+
+		if (temp == null) {
+			System.out.println("enter correct index");
+			return;
+		}
+
+		newNode.next = temp.next;
+		temp.next = newNode;
+
+	}
+
+	public void printdata() {
+		NodeLinsk<Integer> temp = head;
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+
+		completeCode obj1 = new completeCode();
+		System.out.println("---------------");
+//		obj1.insertInToHead(10);
+//		obj1.insertInToHead(20);
+//		obj1.insertInToHead(30);
+//		obj1.insertInToHead(40);
+//		obj1.printdata();
+
+		obj1.insertAtAnyPositon(0, 50);
+		obj1.insertAtAnyPositon(1, 70);
+		obj1.insertAtAnyPositon(1, 90);
+		obj1.insertAtAnyPositon(5, 100);
+		obj1.printdata();
+
+	}
+
+}

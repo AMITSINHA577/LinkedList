@@ -1,0 +1,19 @@
+package linkedList;
+
+public class insertAtAnyPoint {
+	
+	// Insert at a specific position (0-based index)
+	
+		public void insertAtAnyPoint(int data, int Position) {
+			Node<Integer> newNode = new Node<Integer>(data);
+			
+			
+		}
+		
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

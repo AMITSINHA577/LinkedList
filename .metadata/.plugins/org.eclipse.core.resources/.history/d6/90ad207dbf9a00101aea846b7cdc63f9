@@ -1,0 +1,17 @@
+package linkedList;
+
+public class TestingAllCode {
+	
+	Node<Integer> head;
+	
+	public static void main(String[] args) {
+		Node<Integer> newNode = new Node();
+		
+		if(head == null) {
+			
+		}
+		
+
+	}
+
+}

@@ -1,0 +1,46 @@
+package linkedList;
+
+public class TestingAllCode {
+	
+	linkNode<Integer> head;
+	
+	public void headinsert(int data) {
+		linkNode<Integer> newNode = new linkNode<Integer>();
+		
+		if(head == null) {
+			head = newNode;
+			return;
+		}
+		
+		newNode.next = head;
+		head = newNode;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		TestingAllCode obj1 = new TestingAllCode();
+		obj1.headinsert(10);
+		obj1.headinsert(30);
+		obj1.headinsert(90);
+		obj1.headinsert(70);
+		
+
+	}
+
+}
+
+class linkNode<T> {
+	T data;
+	linkNode<T> next;
+
+	public linkNode() {
+		// TODO Auto-generated constructor stub
+		this.next = null;
+	}
+
+	public linkNode(T data) {
+		this.data = data;
+		this.next = null;
+	}
+}

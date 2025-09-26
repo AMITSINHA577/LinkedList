@@ -1,0 +1,25 @@
+package linkedList;
+
+public class TestingAllCode {
+	
+	Node<Integer> head;
+
+	public void insertDataInToHead(int data) {
+		Node<Integer> newNode = new Node<Integer>(data);
+		
+		if(head == null) {
+			newNode = head;
+		}
+		
+		newNode.next = head;
+		newNode = head;
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+	}
+
+}

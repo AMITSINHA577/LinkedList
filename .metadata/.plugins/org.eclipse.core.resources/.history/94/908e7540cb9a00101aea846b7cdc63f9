@@ -1,0 +1,35 @@
+package linkedList;
+
+public class insertTail {
+	
+	Node<Integer> head;
+	
+	public void  tailInsert(int data) {
+		
+		Node<Integer> newNode = new Node<Integer>(data);
+		
+		if(head == null) {
+			head = newNode;
+
+			System.out.println("Insertion at tail is successful");
+			return;
+		}
+		
+		Node<Integer> temp = head;
+		
+		while(temp.next!=null) {
+			temp = temp.next;
+		}
+		
+		temp.next = newNode;
+		System.out.println("Insertion at tail is successful");
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

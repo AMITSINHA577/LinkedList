@@ -1,0 +1,43 @@
+package linkedList;
+
+public class insertAtAnyPoint {
+	
+	// Node class yaha pe InsertInHead me bani hui use ho rahi h
+	// Insert at a specific position (0-based index)
+	
+	Node<Integer> head;
+		public void insertAtAnyPoint(int data, int position) {
+			Node<Integer> newNode = new Node<Integer>(data);  	// Node class yaha pe InsertInHead me bani hui use ho rahi h
+			
+			if(position == 0) {
+				newNode.next = head;
+				head = newNode;
+				System.out.println("Insertion at position " + position + " is successful");
+				return;
+			}
+			
+			Node<Integer> temp = head;
+			int currentPos = 0;
+			
+			while(temp!= null && currentPos <position -1) {
+				temp = temp.next;
+				currentPos++;
+			}
+			
+			if(temp == null) {
+				System.out.println("Position out of range");
+	            return;
+			}
+			
+			newNode.next = temp.next;
+			temp.next = newNode;
+			
+		}
+		
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

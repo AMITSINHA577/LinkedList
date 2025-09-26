@@ -1,0 +1,24 @@
+package linkedList;
+
+public class InsertInToHead {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Node<T> {
+	T data;
+	Node next;
+	
+	Node(){
+		this.next = null;
+	}
+	
+	Node(T data){
+		this.data = data;
+		this.next = null;
+	}
+}

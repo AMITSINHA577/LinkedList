@@ -1,0 +1,25 @@
+package linkedList;
+
+public class completeCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+class NodeLinsk<T>{
+	T data;
+	NodeLinsk<T> next;
+	
+	public NodeLinsk() {
+		this.next = null;
+	}
+	
+	public NodeLinsk(int data) {
+		this.next = null;
+		this.data = data;
+	}
+}
