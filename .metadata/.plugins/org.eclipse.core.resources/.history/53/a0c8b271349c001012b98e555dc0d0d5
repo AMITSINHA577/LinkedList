@@ -1,0 +1,71 @@
+package linkedList;
+
+public class deleteAtTail {
+
+	Node<Integer> head;
+
+	public void insertInToHead(int data) {
+
+		Node<Integer> newNode = new Node(data);
+
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+
+		newNode.next = head;
+		head = newNode;
+	}
+
+	public void deleteTail() {
+
+		if (head == null) {
+			System.out.println("Linked List is empty");
+			return;
+		}
+
+		if (head.next == null) {
+			head = null;
+			System.out.println("Deletion at tail is successful");
+			return;
+		}
+
+		Node<Integer> temp = head;
+		Node<Integer> prev = null;
+
+		while (temp.next != null) {
+			prev = temp;
+			temp = temp.next;
+		}
+
+		prev.next = null;
+		System.out.println("Deletion at tail is successful");
+
+	}
+
+	public void printData() {
+
+		Node<Integer> temp = head;
+		while (temp != null) {
+			System.out.println("listedlist Data-> " + temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		deleteAtTail obj1 = new deleteAtTail();
+
+		obj1.insertInToHead(10);
+		obj1.insertInToHead(20);
+		obj1.insertInToHead(30);
+		obj1.insertInToHead(40);
+		obj1.printData();
+		obj1.deleteTail();
+		System.out.println("after delete node at tail");
+		obj1.deleteTail();
+
+	}
+
+}

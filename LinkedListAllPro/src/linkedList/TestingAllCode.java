@@ -15,32 +15,44 @@ public class TestingAllCode {
 		newNode.next = head;
 		head = newNode;
 	}
-	
-	
+
 	public void addAnyPlce(int index, int data) {
 		linkNode<Integer> newNode = new linkNode(data);
-		
-		if(index == 0) {
+
+		if (index == 0) {
 			newNode.next = head;
 			head = newNode;
 			return;
 		}
-		
-		int currentIndex=  0;
+
+		int currentIndex = 0;
 		linkNode<Integer> temp = head;
-		
-		while(temp!=null && currentIndex<index-1) {
+
+		while (temp != null && currentIndex < index - 1) {
 			currentIndex++;
 			temp = temp.next;
 		}
-		
-		if(temp == null) {
+
+		if (temp == null) {
 			System.out.println("worng index");
 			return;
 		}
-		
+
 		newNode.next = temp.next;
 		temp.next = newNode;
+	}
+
+	public void deleteHead() {
+		if (head == null) {
+			System.out.println("Lined List is empty");
+			return;
+		}
+
+		linkNode<Integer> temp = head;
+		head = head.next;
+		temp.next = null;
+		System.out.println("deleteion head is successfylly");
+
 	}
 
 	public void printData() {
@@ -55,16 +67,20 @@ public class TestingAllCode {
 		// TODO Auto-generated method stub
 
 		TestingAllCode obj1 = new TestingAllCode();
-		obj1.headinsert(10);
-		obj1.headinsert(30);
-		obj1.headinsert(90);
-		obj1.headinsert(70);
-//		obj1.printData();
-		
-		obj1.addAnyPlce(0, 50);
-		obj1.addAnyPlce(2, 40);
-		obj1.addAnyPlce(10, 530);
+//		obj1.headinsert(10);
+//		obj1.headinsert(30);
+//		obj1.headinsert(90);
+//		obj1.headinsert(70);
+////		obj1.printData();
+//
+//		obj1.addAnyPlce(0, 50);
+//		obj1.addAnyPlce(2, 40);
+//		obj1.addAnyPlce(10, 530);
 
+		obj1.printData();
+		
+		System.out.println("Delete ...");
+		obj1.deleteHead();
 		obj1.printData();
 
 	}

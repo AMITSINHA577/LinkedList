@@ -2,7 +2,7 @@ package linkedList;
 
 // Node class to represent a single element in the linked list
 class NodeLinsk<T> {
-	T data; // stores data of the node
+	T data; // stores the value of the node
 	NodeLinsk<T> next; // reference to the next node
 
 	// default constructor
@@ -24,7 +24,7 @@ public class completeCode {
 
 	// Insert a new node at the beginning (head) of the list
 	public void insertInToHead(int data) {
-		NodeLinsk<Integer> newNode = new NodeLinsk<Integer>(data);
+		NodeLinsk<Integer> newNode = new NodeLinsk<>(data);
 
 		// if list is empty, make newNode the head
 		if (head == null) {
@@ -46,7 +46,7 @@ public class completeCode {
 			return;
 		}
 
-		NodeLinsk<Integer> newNode = new NodeLinsk<Integer>(data);
+		NodeLinsk<Integer> newNode = new NodeLinsk<>(data);
 
 		// if inserting at head (index = 0)
 		if (index == 0) {
@@ -78,7 +78,7 @@ public class completeCode {
 
 	// Insert a new node at the end (tail) of the list
 	public void insertTail(int data) {
-		NodeLinsk<Integer> newNode = new NodeLinsk<Integer>(data);
+		NodeLinsk<Integer> newNode = new NodeLinsk<>(data);
 
 		// if list is empty, new node becomes head
 		if (head == null) {
@@ -94,6 +94,47 @@ public class completeCode {
 
 		// add new node at the end
 		temp.next = newNode;
+	}
+
+	// Delete the head (first element) of the list
+	public void deleteHead() {
+		if (head == null) {
+			System.out.println("Linked List is empty. Nothing to delete at head.");
+			return;
+		}
+
+		NodeLinsk<Integer> temp = head; // hold current head
+		head = head.next; // move head to the next node
+		temp.next = null; // detach old head from the list
+		System.out.println("Deletion at head is successful. Deleted value: " + temp.data);
+	}
+
+	// Delete the tail (last element) of the list
+	public void deleteTail() {
+		if (head == null) {
+			System.out.println("Linked List is empty. Nothing to delete at tail.");
+			return;
+		}
+
+		// if only one node is present
+		if (head.next == null) {
+			System.out.println("Deletion at tail is successful. Deleted value: " + head.data);
+			head = null;
+			return;
+		}
+
+		NodeLinsk<Integer> temp = head;
+		NodeLinsk<Integer> prev = null;
+
+		// traverse till last node
+		while (temp.next != null) {
+			prev = temp;
+			temp = temp.next;
+		}
+
+		// disconnect last node
+		prev.next = null;
+		System.out.println("Deletion at tail is successful. Deleted value: " + temp.data);
 	}
 
 	// Print all nodes in the linked list
@@ -117,22 +158,38 @@ public class completeCode {
 
 		completeCode obj1 = new completeCode();
 
-		System.out.println("Inserting at head:");
+		System.out.println("=== Inserting at head ===");
 		obj1.insertInToHead(10);
 		obj1.insertInToHead(20);
 		obj1.insertInToHead(30);
 		obj1.insertInToHead(40);
 		obj1.printdata();
 
-		System.out.println("\nInserting at specific positions:");
+		System.out.println("\n=== Inserting at specific positions ===");
 		obj1.insertAtAnyPositon(0, 50); // insert at head
 		obj1.insertAtAnyPositon(1, 70); // insert at index 1
 		obj1.insertAtAnyPositon(0, 90); // insert again at head
 		obj1.insertAtAnyPositon(1, 100); // insert at index 1
 		obj1.printdata();
 
-		System.out.println("\nInserting at tail:");
+		System.out.println("\n=== Inserting at tail ===");
 		obj1.insertTail(120);
+		obj1.printdata();
+
+		System.out.println("\n=== Deleting at head ===");
+		obj1.deleteHead();
+		obj1.printdata();
+
+		System.out.println("\n=== Deleting at head again ===");
+		obj1.deleteHead();
+		obj1.printdata();
+
+		System.out.println("\n=== Deleting at tail ===");
+		obj1.deleteTail();
+		obj1.printdata();
+
+		System.out.println("\n=== Deleting at tail again ===");
+		obj1.deleteTail();
 		obj1.printdata();
 	}
 }

@@ -1,0 +1,19 @@
+package linkedList;
+
+public class deleteAtTail {
+	NodeLinsk<Integer> head;
+
+	public void deleteTail() {
+
+		if (head == null) {
+
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

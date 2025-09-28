@@ -1,0 +1,151 @@
+package linkedList;
+
+// Node class to represent a single element in the linked list
+class NodeLinsk<T> {
+	T data; // stores data of the node
+	NodeLinsk<T> next; // reference to the next node
+
+	// default constructor
+	public NodeLinsk() {
+		this.next = null;
+	}
+
+	// parameterized constructor
+	public NodeLinsk(T data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+// Main linked list class
+public class completeCode {
+
+	NodeLinsk<Integer> head; // head pointer to the first node of the list
+
+	// Insert a new node at the beginning (head) of the list
+	public void insertInToHead(int data) {
+		NodeLinsk<Integer> newNode = new NodeLinsk<Integer>(data);
+
+		// if list is empty, make newNode the head
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+
+		// otherwise link newNode to current head and update head
+		newNode.next = head;
+		head = newNode;
+	}
+
+	// Insert a new node at any given index
+	public void insertAtAnyPositon(int index, int data) {
+
+		// check for invalid index
+		if (index < 0) {
+			System.out.println("Negative index not allowed");
+			return;
+		}
+
+		NodeLinsk<Integer> newNode = new NodeLinsk<Integer>(data);
+
+		// if inserting at head (index = 0)
+		if (index == 0) {
+			newNode.next = head;
+			head = newNode;
+			return;
+		}
+
+		NodeLinsk<Integer> temp = head;
+		int currectIndex = 0;
+
+		// move to the node just before the desired index
+		while (temp != null && currectIndex < index - 1) {
+			currectIndex++;
+			temp = temp.next;
+		}
+
+		// if index is greater than length, insert at tail
+		if (temp == null) {
+			System.out.println("Index greater than list length, inserting at tail");
+			insertTail(data);
+			return;
+		}
+
+		// link newNode into the list
+		newNode.next = temp.next;
+		temp.next = newNode;
+	}
+
+	// Insert a new node at the end (tail) of the list
+	public void insertTail(int data) {
+		NodeLinsk<Integer> newNode = new NodeLinsk<Integer>(data);
+
+		// if list is empty, new node becomes head
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+
+		// traverse till last node
+		NodeLinsk<Integer> temp = head;
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+
+		// add new node at the end
+		temp.next = newNode;
+	}
+
+	public void deleteHead() {
+		if (head == null) {
+			System.out.println("Linked List is empty");
+			return;
+		}
+
+		NodeLinsk<Integer> temp = head;
+		head = head.next;
+		temp.next = null;
+		System.out.println("Deletion at head is successful");
+
+	}
+
+	// Print all nodes in the linked list
+	public void printdata() {
+		NodeLinsk<Integer> temp = head;
+
+		if (temp == null) {
+			System.out.println("List is empty");
+			return;
+		}
+
+		System.out.println("Linked List elements:");
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	// Driver method to test the code
+	public static void main(String[] args) {
+
+		completeCode obj1 = new completeCode();
+
+		System.out.println("Inserting at head:");
+		obj1.insertInToHead(10);
+		obj1.insertInToHead(20);
+		obj1.insertInToHead(30);
+		obj1.insertInToHead(40);
+		obj1.printdata();
+
+		System.out.println("\nInserting at specific positions:");
+		obj1.insertAtAnyPositon(0, 50); // insert at head
+		obj1.insertAtAnyPositon(1, 70); // insert at index 1
+		obj1.insertAtAnyPositon(0, 90); // insert again at head
+		obj1.insertAtAnyPositon(1, 100); // insert at index 1
+		obj1.printdata();
+
+		System.out.println("\nInserting at tail:");
+		obj1.insertTail(120);
+		obj1.printdata();
+	}
+}
