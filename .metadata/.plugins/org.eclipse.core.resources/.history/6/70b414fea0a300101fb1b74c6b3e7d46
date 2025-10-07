@@ -180,15 +180,12 @@ public class completeCode {
 		System.out.println("Deleted node at position " + position + " : " + temp.data);
 	}
 
-	// ✅ Method to update the value of a node at a specific position
 	public void updateNodeDataAtPosition(int position, int updateValue) {
-		// check if list is empty
 		if (head == null) {
 			System.out.println("Linked list is empty. No nodes to update.");
 			return;
 		}
 
-		// position should start from 1 (not 0)
 		if (position <= 0) {
 			System.out.println("Invalid position! Position should be >= 1.");
 			return;
@@ -196,21 +193,18 @@ public class completeCode {
 
 		int countPosition = 1;
 		NodeLinsk<Integer> temp = head;
-
-		// traverse the list until reaching the desired position
 		while (temp != null && countPosition < position) {
 			countPosition++;
 			temp = temp.next;
 		}
 
-		// if node found, update its data
 		if (temp != null) {
 			temp.data = updateValue;
 			System.out.println("Node at position " + position + " updated successfully. ");
 		} else {
-			// if position is greater than list length
 			System.out.println("Position " + position + " is out of range. No update performed.");
 		}
+
 	}
 
 	// Print all nodes in the linked list
@@ -276,11 +270,6 @@ public class completeCode {
 		obj1.printdata();
 
 		obj1.deleteAtAnyPosition(10); // out of range
-		obj1.printdata();
-
-		// ✅ Added updateNodeDataAtPosition() call
-		System.out.println("\n=== Updating node data at specific position ===");
-		obj1.updateNodeDataAtPosition(2, 999); // update node at position 2
 		obj1.printdata();
 	}
 }
