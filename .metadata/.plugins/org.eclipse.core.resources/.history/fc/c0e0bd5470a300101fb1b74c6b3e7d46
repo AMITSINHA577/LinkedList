@@ -1,0 +1,19 @@
+package linkedList;
+
+public class deleteAtAnyPositionData {
+	
+	
+	public void deleteAtAnyPosition(int pos) {
+		
+		if(pos==0) {
+			
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

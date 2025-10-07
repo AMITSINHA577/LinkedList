@@ -137,6 +137,49 @@ public class completeCode {
 		System.out.println("Deletion at tail is successful. Deleted value: " + temp.data);
 	}
 
+	// ✅ Corrected Delete at Any Position method
+	public void deleteAtAnyPosition(int position) {
+		if (head == null) {
+			System.out.println("List is empty.");
+			return;
+		}
+
+		if (position < 0) {
+			System.out.println("Invalid position! Must be >= 0");
+			return;
+		}
+
+		// delete head node
+		if (position == 0) {
+			System.out.println("Deleted node at position " + position + " : " + head.data);
+			NodeLinsk<Integer> temp = head;
+			head = head.next;
+			temp.next = null;
+			return;
+		}
+
+		NodeLinsk<Integer> temp = head;
+		NodeLinsk<Integer> prev = null;
+		int count = 0;
+
+		// Traverse to the given position
+		while (temp != null && count < position) {
+			prev = temp;
+			temp = temp.next;
+			count++;
+		}
+
+		// if position out of range
+		if (temp == null) {
+			System.out.println("Position out of range. No deletion performed.");
+			return;
+		}
+
+		// unlink the node
+		prev.next = temp.next;
+		System.out.println("Deleted node at position " + position + " : " + temp.data);
+	}
+
 	// Print all nodes in the linked list
 	public void printdata() {
 		NodeLinsk<Integer> temp = head;
@@ -190,6 +233,16 @@ public class completeCode {
 
 		System.out.println("\n=== Deleting at tail again ===");
 		obj1.deleteTail();
+		obj1.printdata();
+
+		System.out.println("\n=== Deleting at specific positions ===");
+		obj1.deleteAtAnyPosition(2); // delete node at position 2
+		obj1.printdata();
+
+		obj1.deleteAtAnyPosition(0); // delete head
+		obj1.printdata();
+
+		obj1.deleteAtAnyPosition(10); // out of range
 		obj1.printdata();
 	}
 }

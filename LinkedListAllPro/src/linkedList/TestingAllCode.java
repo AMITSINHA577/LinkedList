@@ -2,10 +2,11 @@ package linkedList;
 
 public class TestingAllCode {
 
-	linkNode<Integer> head;
+	NodeTest<Integer> head;
 
-	public void headinsert(int data) {
-		linkNode<Integer> newNode = new linkNode<Integer>(data);
+	private void insertATHead(int data) {
+		// TODO Auto-generated method stub
+		NodeTest<Integer> newNode = new NodeTest<Integer>(data);
 
 		if (head == null) {
 			head = newNode;
@@ -14,89 +15,140 @@ public class TestingAllCode {
 
 		newNode.next = head;
 		head = newNode;
+
 	}
 
-	public void addAnyPlce(int index, int data) {
-		linkNode<Integer> newNode = new linkNode(data);
+	private void insertAtTail(int data) {
+		NodeTest<Integer> newNode = new NodeTest(data);
 
-		if (index == 0) {
-			newNode.next = head;
+		if (head == null) {
 			head = newNode;
 			return;
 		}
 
-		int currentIndex = 0;
-		linkNode<Integer> temp = head;
+		NodeTest<Integer> temp = head;
 
-		while (temp != null && currentIndex < index - 1) {
-			currentIndex++;
+		while (temp.next != null) {
 			temp = temp.next;
+		}
+		temp.next = newNode;
+
+	}
+
+	private void insertAtAnyPoint(int pos, int data) {
+
+		NodeTest<Integer> newNode = new NodeTest(data);
+
+		if (pos == 0) {
+			insertATHead(data);
+			System.out.println("insert at 0 pos..");
+		}
+		NodeTest<Integer> temp = head;
+		int countPOS = 0;
+
+		while (temp != null && countPOS == pos - 1) {
+			temp = temp.next;
+			countPOS++;
 		}
 
 		if (temp == null) {
-			System.out.println("worng index");
+			System.out.println("out of pos..");
 			return;
 		}
 
 		newNode.next = temp.next;
 		temp.next = newNode;
+
 	}
 
-	public void deleteHead() {
-		if (head == null) {
-			System.out.println("Lined List is empty");
+	private void deleteAtHead() {
+		// TODO Auto-generated method stub
+
+		NodeTest<Integer> temp = head;
+		if (temp == null) {
+			System.out.println("List is empty");
 			return;
 		}
 
-		linkNode<Integer> temp = head;
 		head = head.next;
 		temp.next = null;
-		System.out.println("deleteion head is successfylly");
+		System.out.println("head delete done");
 
 	}
 
-	public void printData() {
-		linkNode<Integer> temp = head;
+	private void deleteAtTail() {
+		// TODO Auto-generated method stub
+
+		NodeTest<Integer> temp = head;
+		NodeTest<Integer> prev = null;
+
+		if (temp == null) {
+			System.out.println("List is empty");
+			return;
+		}
+
+		if (temp.next == null) {
+			head = null;
+			System.out.println("delete done");
+			return;
+		}
+
+		while (temp.next != null) {
+			prev = temp;
+			temp = temp.next;
+		}
+
+		prev.next = null;
+
+	}
+
+	private void printNodeData() {
+		// TODO Auto-generated method stub
+
+		NodeTest<Integer> temp = head;
 		while (temp != null) {
 			System.out.println(temp.data);
 			temp = temp.next;
 		}
+
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		TestingAllCode obj1 = new TestingAllCode();
-//		obj1.headinsert(10);
-//		obj1.headinsert(30);
-//		obj1.headinsert(90);
-//		obj1.headinsert(70);
-////		obj1.printData();
-//
-//		obj1.addAnyPlce(0, 50);
-//		obj1.addAnyPlce(2, 40);
-//		obj1.addAnyPlce(10, 530);
-
-		obj1.printData();
-		
-		System.out.println("Delete ...");
-		obj1.deleteHead();
-		obj1.printData();
+		obj1.insertATHead(10);
+		obj1.printNodeData();
+		System.out.println("tail...");
+		obj1.insertAtTail(20);
+		obj1.printNodeData();
+		System.out.println("head check..");
+		obj1.insertATHead(100);
+		obj1.printNodeData();
+		System.out.println("add at any pos..");
+		obj1.insertAtAnyPoint(0, 50);
+		obj1.insertAtAnyPoint(10, 20);
+		obj1.insertAtAnyPoint(4, 70);
+		obj1.printNodeData();
+		System.out.println("delete at head....");
+		obj1.deleteAtHead();
+		obj1.printNodeData();
+		System.out.println("delete tail...");
+		obj1.deleteAtTail();
+		obj1.printNodeData();
 
 	}
 
 }
 
-class linkNode<T> {
+class NodeTest<T> {
 	T data;
-	linkNode<T> next;
+	NodeTest next;
 
-	public linkNode() {
-		// TODO Auto-generated constructor stub
+	public NodeTest() {
 		this.next = null;
 	}
 
-	public linkNode(T data) {
+	public NodeTest(T data) {
 		this.data = data;
 		this.next = null;
 	}

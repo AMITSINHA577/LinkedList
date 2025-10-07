@@ -1,0 +1,22 @@
+package linkedList;
+
+public class deleteAtAnyPositionData {
+
+	Node<Integer> head;
+
+	public void deleteAtAnyPosition(int pos) {
+
+		Node<Integer> temp = head;
+		if (head == null) {
+			System.out.println("List Is enmpty");
+			return;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

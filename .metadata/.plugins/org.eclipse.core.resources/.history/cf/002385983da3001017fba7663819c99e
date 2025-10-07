@@ -1,0 +1,23 @@
+package linkedList;
+
+public class TestingAllCode {
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+class NodeTest<T> {
+	T data;
+	NodeTest<T> next;
+
+	public NodeTest() {
+		this.next = null;
+	}
+
+	public NodeTest(T data) {
+		this.data = data;
+		this.next = null;
+	}
+}
