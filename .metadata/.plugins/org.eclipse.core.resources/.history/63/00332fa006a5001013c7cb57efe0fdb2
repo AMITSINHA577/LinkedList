@@ -1,0 +1,43 @@
+package linkedList;
+
+public class completeDoublyCode {
+
+	DNode<Integer> head;
+
+	private void insertInToHead(int data) {
+
+		DNode<Integer> newNode = new DNode(data);
+
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+
+		newNode.next = head;
+		head.prev = newNode;
+		head = newNode;
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+class DNode<T> {
+	T data;
+	DNode<T> next;
+	DNode<T> prev;
+
+	public DNode() {
+		this.next = null;
+		this.prev = null;
+	}
+
+	public DNode(T data) {
+		this.data = data;
+		this.next = null;
+		this.prev = null;
+
+	}
+}

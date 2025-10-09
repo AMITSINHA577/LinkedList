@@ -1,0 +1,42 @@
+package linkedList;
+
+public class doublyInsertInToHead {
+	doublyNode<Integer> head;
+	
+	private void insertInToHeadDoubly(int data) {
+		
+		doublyNode<Integer> newNode = new doublyNode(data);
+		
+		if(head == null) {
+			head = newNode;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}
+
+class doublyNode<T> {
+
+	T data;
+	doublyNode<T> next;
+	doublyNode<T> prev;
+
+	public doublyNode() {
+		// TODO Auto-generated constructor stub
+		this.next = null;
+		this.prev = null;
+	}
+
+	public void doublyNod(T data) {
+		// TODO Auto-generated method stub
+		this.data = data;
+		this.next = null;
+		this.prev = null;
+	}
+}
