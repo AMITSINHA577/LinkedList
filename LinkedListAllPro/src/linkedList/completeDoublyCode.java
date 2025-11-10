@@ -9,21 +9,24 @@ public class completeDoublyCode {
 
 	DNode<Integer> head; // Pointer to the first node of the list
 
+	DNode<Integer> tail;
+
 //	Inserts a new node at the beginning (head) of the doubly linked list.
 	private void insertInToHead(int data) {
 
 		DNode<Integer> newNode = new DNode<Integer>(data);
 
 		// Case 1: If the list is empty
-        if (head == null) {
-            head = newNode;
-            return;
-        }
+		if (head == null) {
+			head = newNode;
+			tail = newNode;
+			return;
+		}
 
-     // Case 2: If list already has nodes
-        newNode.next = head;  // point new node's next to current head
-        head.prev = newNode;  // update old head's prev to new node
-        head = newNode;       // update head to new node
+		// Case 2: If list already has nodes
+		newNode.next = head; // point new node's next to current head
+		head.prev = newNode; // update old head's prev to new node
+		head = newNode; // update head to new node
 	}
 
 //	Inserts a new node at the end (tail) of the doubly linked list.
@@ -31,21 +34,67 @@ public class completeDoublyCode {
 
 		DNode<Integer> newNode = new DNode<Integer>(data);
 		// Case 1: Empty list
-        if (head == null) {
-            head = newNode;
-            return;
-        }
+		if (head == null) {
+			head = newNode;
+			tail = newNode;
+			return;
+		}
 
-     // Case 2: Traverse to the last node
-        DNode<Integer> temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
+		// Case 2: Traverse to the last node
+		DNode<Integer> temp = head;
+		while (temp.next != null) {
+			temp = temp.next;
+		}
 
-        // Connect new node to the end
-        temp.next = newNode;
-        newNode.prev = temp;
+		// Connect new node to the end
+		temp.next = newNode;
+		newNode.prev = temp;
+		tail = newNode;
 
+	}
+
+	private void insertAtAnyIndex(int data, int position) {
+		DNode<Integer> newNode = new DNode<>(data);
+
+		// Case 1: Insert at head
+		if (position == 0) {
+			insertInToHead(data);
+			System.out.println("Inserted at position " + position);
+			return;
+		}
+
+		DNode<Integer> temp = head;
+		int currentPos = 0;
+
+		// Traverse till the node just before the desired position
+		while (temp != null && currentPos < position - 1) {
+			temp = temp.next;
+			currentPos++;
+		}
+
+		// Case 2: Position out of range (greater than list length)
+		if (temp == null) {
+			System.out.println("❌ Position out of range: " + position);
+			return;
+		}
+
+		// Case 3: Insert at the tail (if temp.next is null)
+		if (temp.next == null) {
+			temp.next = newNode;
+			newNode.prev = temp;
+			tail = newNode;
+			System.out.println("Inserted at the end (position " + position + ")");
+			return;
+		}
+
+		// Case 4: Insert between nodes
+		DNode<Integer> nextNode = temp.next;
+		newNode.next = nextNode;
+		newNode.prev = temp;
+		temp.next = newNode;
+		nextNode.prev = newNode;
+
+		System.out.println("Inserted " + data + " at position " + position);
 	}
 
 	private void printData() {
@@ -53,6 +102,15 @@ public class completeDoublyCode {
 		while (temp != null) {
 			System.out.println(temp.data);
 			temp = temp.next;
+		}
+
+	}
+
+	private void printDataRevers() {
+		DNode<Integer> temp = tail;
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.prev;
 		}
 
 	}
@@ -73,6 +131,15 @@ public class completeDoublyCode {
 		list.insertInToTail(90);
 		list.insertInToTail(100);
 		list.printData();
+
+		System.out.println("\nInsert into any index...");
+		list.insertAtAnyIndex(25, 2); // Insert between nodes
+		list.insertAtAnyIndex(200, 0); // Insert at head
+		list.insertAtAnyIndex(999, 10); // Out of range
+		list.printData();
+
+		System.out.println("Print in revers order...");
+		list.printDataRevers();
 
 	}
 

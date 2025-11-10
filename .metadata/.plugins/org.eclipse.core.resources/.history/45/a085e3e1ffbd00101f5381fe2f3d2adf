@@ -1,0 +1,37 @@
+package linkedList;
+
+public class findMidElement {
+	
+	Node<Integer> head;
+	
+	public void insertInToTop(int data) {
+		Node<Integer> newHead = new Node(data);
+		
+		if(head == null) {
+			head = newHead;
+			return;
+		}
+		
+		newHead.next = head;
+		head = newHead;
+	}
+	
+	public void printData() {
+		Node<Integer> temp = head;
+		while(temp!=null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		findMidElement obj1 = new findMidElement();
+		obj1.insertInToTop(10);
+		obj1.insertInToTop(20);
+		obj1.insertInToTop(90);
+		obj1.insertInToTop(40);
+		obj1.insertInToTop(70);
+	}
+
+}

@@ -10,5 +10,12 @@
     <fullyQualifiedTypeName name="linkedList.Node"/>
     <fullyQualifiedTypeName name="linkedList.updateNodeData"/>
     <fullyQualifiedTypeName name="linkedList.NodeLinsk"/>
+    <fullyQualifiedTypeName name="linkedList.doublyInsertInToHead"/>
+    <fullyQualifiedTypeName name="linkedList.doublyInsertInToTail"/>
+    <fullyQualifiedTypeName name="linkedList.completeDoublyCode"/>
+    <fullyQualifiedTypeName name="linkedList.insertAtAnyPoint"/>
+    <fullyQualifiedTypeName name="linkedList.doublyNode"/>
+    <fullyQualifiedTypeName name="linkedList.insertAtAnyPos"/>
+    <fullyQualifiedTypeName name="linkedList.DNode"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>
