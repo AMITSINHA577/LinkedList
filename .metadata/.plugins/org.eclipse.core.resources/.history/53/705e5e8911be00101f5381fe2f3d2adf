@@ -1,0 +1,46 @@
+package linkedList;
+
+public class reversList {
+	
+	Node<Integer> head;
+
+	public void insertInToTop(int data) {
+		Node<Integer> newHead = new Node(data);
+
+		if (head == null) {
+			head = newHead;
+			return;
+		}
+
+		newHead.next = head;
+		head = newHead;
+	}
+	
+	public Node<Integer> reversLinkedList(){
+		Node<Integer> current = head;
+		Node<Integer> prev = null;
+		
+		while(current!=null) {
+			Node<Integer> nextNode = current.next;
+			current.next = prev;
+			prev = current;
+			current = nextNode;
+		}
+		return prev;
+		
+	}
+
+	public void printData() {
+		Node<Integer> temp = head;
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
