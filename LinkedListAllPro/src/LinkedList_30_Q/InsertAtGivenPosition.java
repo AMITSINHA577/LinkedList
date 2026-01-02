@@ -1,0 +1,44 @@
+package LinkedList_30_Q;
+
+
+public class InsertAtGivenPosition {
+	
+	nodeLinks<Integer> head;
+	
+	public void createAndPrint(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void insertAtPosition(int pos, int data) {
+		
+		nodeLinks<Integer> temp = head;
+		int countNode = 0;
+		while(pos == countNode || temp.next == null) {
+			
+		}
+		
+	}
+	
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+		while(temp.next!=null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		InsertAtGivenPosition obj1 =  new InsertAtGivenPosition(); 
+
+	}
+
+}

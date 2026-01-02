@@ -1,0 +1,59 @@
+package LinkedList_30_Q;
+
+public class ReverseLinkedListIterative {
+
+	nodeLinks<Integer> head;
+
+	public void createAndPrint(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public nodeLinks<Integer> reverseIterative() {
+		nodeLinks currectN = head;
+		nodeLinks preN = null;
+
+		while (currectN != null) {
+
+			nodeLinks nextN = currectN.next;
+			currectN.next = preN;
+			preN = currectN;
+			currectN = nextN;
+
+		}
+
+		head = preN;
+		return head;
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+		while (temp.next != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ReverseLinkedListIterative obj = new ReverseLinkedListIterative();
+		obj.createAndPrint(10);
+		obj.createAndPrint(20);
+		obj.createAndPrint(30);
+		obj.createAndPrint(40);
+		obj.printData();
+		System.out.println("After rever the list....");
+		obj.reverseIterative();
+		obj.printData();
+
+	}
+
+}

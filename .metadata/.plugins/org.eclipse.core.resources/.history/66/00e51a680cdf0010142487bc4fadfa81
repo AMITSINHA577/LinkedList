@@ -1,0 +1,33 @@
+package LinkedList_30_Q;
+
+public class CreateAndPrintLinkedList {
+	
+	nodeLinks<Integer> head ;
+	
+	public void createAndPrint(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>();
+		
+		if(head == null) {
+			head = newNodeData;
+			return;
+		}
+		
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+	
+	public void printLinkList() {
+		nodeLinks<Integer> temp;
+		while(temp!=null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+			
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

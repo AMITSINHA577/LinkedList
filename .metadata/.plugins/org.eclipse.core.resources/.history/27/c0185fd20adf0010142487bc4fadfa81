@@ -1,0 +1,10 @@
+package LinkedList_30_Q;
+
+public class nodeLinks <T> {
+
+	T data;
+	nodeLinks.next ;
+	nodeLinks(){
+		this.next = null;
+	}
+}
