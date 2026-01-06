@@ -1,0 +1,60 @@
+package LinkedList_30_Q;
+
+public class SearchElementInLinkedList {
+	nodeLinks<Integer> head;
+
+	public void instertData(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void searchElement(int searchEle) {
+
+		nodeLinks<Integer> temp = head;
+
+		while (temp.next != null && temp.data != searchEle) {
+			temp = temp.next;
+		}
+
+		if (temp == null) {
+			System.out.println("element is not found");
+			return;
+		} else {
+			System.out.println("lelement is founf at pos:" + temp);
+		}
+
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		SearchElementInLinkedList obj1 = new SearchElementInLinkedList();
+
+		obj1.instertData(10);
+		obj1.instertData(20);
+		obj1.instertData(30);
+		obj1.instertData(40);
+		obj1.instertData(50);
+
+		obj1.printData();
+		System.out.println("----------------");
+		obj1.searchElement(30);
+	}
+
+}

@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="linkedList.TestingAllCode"/>
     <fullyQualifiedTypeName name="linkedList.deleteAtTail"/>
     <fullyQualifiedTypeName name="linkedList.NodeTest"/>
-    <fullyQualifiedTypeName name="linkedList.deleteAtAnyPositionData"/>
     <fullyQualifiedTypeName name="linkedList.Node"/>
     <fullyQualifiedTypeName name="linkedList.updateNodeData"/>
     <fullyQualifiedTypeName name="linkedList.NodeLinsk"/>
@@ -18,8 +17,13 @@
     <fullyQualifiedTypeName name="linkedList.insertAtAnyPos"/>
     <fullyQualifiedTypeName name="linkedList.DNode"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.CreateAndPrintLinkedList"/>
-    <fullyQualifiedTypeName name="LinkedList_30_Q.InsertAtEnd"/>
-    <fullyQualifiedTypeName name="LinkedList_30_Q.nodeLinks"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.InsertAtGivenPosition"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.DeleteNodeByValue"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
+    <fullyQualifiedTypeName name="linkedList.deleteAtAnyPositionData"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.InsertAtEnd"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.SearchElementInLinkedList"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.nodeLinks"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.CountNodesInLinkedList"/>
 </qualifiedTypeNameHistroy>

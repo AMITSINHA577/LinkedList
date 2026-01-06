@@ -1,0 +1,57 @@
+package LinkedList_30_Q;
+
+public class CountNodesInLinkedList {
+
+	nodeLinks<Integer> head;
+
+	public void instertData(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void countNodes() {
+
+		int countNode = 1;
+
+		nodeLinks<Integer> temp = head;
+
+		while (temp.next != null) {
+			countNode++;
+			temp = temp.next;
+		}
+
+		System.out.println("This is the count of nodes " + countNode);
+
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		CountNodesInLinkedList obj1 = new CountNodesInLinkedList();
+
+		obj1.instertData(10);
+		obj1.instertData(20);
+		obj1.instertData(30);
+		obj1.instertData(40);
+		obj1.instertData(50);
+		obj1.printData();
+		obj1.countNodes();
+	}
+
+}

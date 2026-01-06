@@ -1,0 +1,25 @@
+package LinkedList_30_Q;
+
+public class CountNodesInLinkedList {
+
+	nodeLinks<Integer> head;
+
+	public void countNodes() {
+
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

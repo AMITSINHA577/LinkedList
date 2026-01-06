@@ -1,0 +1,28 @@
+package LinkedList_30_Q;
+
+public class SearchElementInLinkedList {
+	nodeLinks<Integer> head;
+
+	public void searchElement(int searchEle) {
+
+		nodeLinks<Integer> temp = head;
+
+		while (temp.next != null && temp.data != searchEle) {
+			temp = temp.next;
+		}
+
+		if (temp == null) {
+			System.out.println("element is not found");
+			return;
+		} else {
+			System.out.println("lelement is founf at pos:" + temp);
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

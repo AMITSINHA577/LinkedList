@@ -1,0 +1,37 @@
+package LinkedList_30_Q;
+
+public class FindMiddleOfLinkedList {
+
+	nodeLinks<Integer> head;
+
+	public void instertData(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public void findMiddle() {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

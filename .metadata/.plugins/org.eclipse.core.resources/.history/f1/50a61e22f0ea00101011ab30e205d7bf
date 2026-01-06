@@ -1,0 +1,45 @@
+package LinkedList_30_Q;
+
+public class CheckPalindromeLinkedList {
+
+	nodeLinks<Integer> head;
+
+	public void instertData(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public void isPalindrome() {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		CheckPalindromeLinkedList obj1 = new CheckPalindromeLinkedList();
+		obj1.instertData(10);
+		obj1.instertData(20);
+		obj1.instertData(30);
+		obj1.instertData(20);
+		obj1.instertData(10);
+		obj1.printData();
+
+	}
+
+}

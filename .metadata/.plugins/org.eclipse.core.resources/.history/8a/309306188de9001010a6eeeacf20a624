@@ -1,0 +1,16 @@
+package LinkedList_30_Q;
+
+public class SearchElementInLinkedList {
+	
+	public nodeLinks<Integer> searchElement(int searchEle) {
+		
+		
+		return;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
