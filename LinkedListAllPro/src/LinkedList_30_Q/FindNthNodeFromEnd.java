@@ -1,0 +1,80 @@
+package LinkedList_30_Q;
+
+public class FindNthNodeFromEnd {
+
+	nodeLinks<Integer> head;
+
+	public void instertData(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public void findNthFromEnd(int NthNode) {
+
+		nodeLinks<Integer> temp = head;
+
+		// Edge case 1: empty list
+		if (head == null) {
+			System.out.println("List is empty");
+			return;
+		}
+
+		// Edge case 2: invalid N
+		if (NthNode <= 0) {
+			System.out.println("Invalid N value");
+			return;
+		}
+
+		int countNode = 0;
+		while (temp != null) {
+			countNode++;
+			temp = temp.next;
+		}
+
+		// Edge case 3: N greater than size
+		if (NthNode > countNode) {
+			System.out.println("N is greater than list size");
+			return;
+		}
+		int finalNthNode = countNode - NthNode + 1;
+
+		nodeLinks<Integer> tempCheck = head;
+		for (int i = 1; i < finalNthNode; i++) {
+			tempCheck = tempCheck.next;
+		}
+
+		System.out.println("N th Node " + finalNthNode + " is: " + tempCheck.data);
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		FindNthNodeFromEnd obj1 = new FindNthNodeFromEnd();
+		obj1.instertData(10);
+		obj1.instertData(20);
+		obj1.instertData(30);
+		obj1.instertData(40);
+		obj1.instertData(50);
+		obj1.printData();
+		obj1.findNthFromEnd(4);
+
+	}
+
+}

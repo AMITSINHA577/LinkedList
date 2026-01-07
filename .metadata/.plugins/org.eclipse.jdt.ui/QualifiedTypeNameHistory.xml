@@ -23,7 +23,10 @@
     <fullyQualifiedTypeName name="linkedList.deleteAtAnyPositionData"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.InsertAtEnd"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.SearchElementInLinkedList"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.CountNodesInLinkedList"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.FindMiddleOfLinkedList"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.CheckPalindromeLinkedList"/>
+    <fullyQualifiedTypeName name="linkedList.reversList"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.nodeLinks"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="LinkedList_30_Q.CountNodesInLinkedList"/>
 </qualifiedTypeNameHistroy>

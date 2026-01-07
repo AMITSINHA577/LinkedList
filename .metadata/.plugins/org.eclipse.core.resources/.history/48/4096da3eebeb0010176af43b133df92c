@@ -1,0 +1,57 @@
+package LinkedList_30_Q;
+
+public class FindNthNodeFromEnd {
+
+	nodeLinks<Integer> head;
+
+	public void instertData(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public void findNthFromEnd(int NthNode) {
+
+		nodeLinks<Integer> temp = head;
+		int countNode = 0;
+		while (temp.next != null) {
+			countNode++;
+			temp = temp.next;
+		}
+
+		int finalNthNode = countNode - NthNode;
+
+		System.out.println("N th Node is: " + finalNthNode);
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		FindNthNodeFromEnd obj1 = new FindNthNodeFromEnd();
+		obj1.instertData(10);
+		obj1.instertData(20);
+		obj1.instertData(30);
+		obj1.instertData(40);
+		obj1.instertData(50);
+		obj1.printData();
+		obj1.findNthFromEnd(2);
+
+	}
+
+}

@@ -1,0 +1,86 @@
+package LinkedList_30_Q;
+
+public class DetectLoopInLinkedList {
+
+	nodeLinks<Integer> head;
+
+	public void instertData(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void createLoop() {
+		nodeLinks<Integer> temp = head;
+		nodeLinks<Integer> loopNode = null;
+
+		while (temp.next != null) {
+
+			if (temp.data == 30) {
+				loopNode = temp;
+			}
+
+			temp = temp.next;
+		}
+
+		temp.next = loopNode; // last node → 30
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public boolean hasLoop() {
+
+		nodeLinks<Integer> slowPointer = head;
+		nodeLinks<Integer> fastPointer = head;
+
+		while (fastPointer != null && fastPointer.next != null) {
+
+			slowPointer = slowPointer.next;
+			fastPointer = fastPointer.next.next;
+
+			if (slowPointer == fastPointer) {
+				return true;
+			}
+
+		}
+		return false;
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		DetectLoopInLinkedList obj1 = new DetectLoopInLinkedList();
+		obj1.instertData(10);
+		obj1.instertData(20);
+		obj1.instertData(30);
+		obj1.instertData(40);
+		obj1.instertData(50);
+
+		// obj1.printData(); // OK before loop
+
+//		obj1.createLoop(); // comment this → no cycle
+
+		if (obj1.hasLoop()) {
+			System.out.println("Yes Detect loop is Linked List");
+		} else {
+
+			System.out.println("No Detect loop is Linked List");
+		}
+
+	}
+
+}
