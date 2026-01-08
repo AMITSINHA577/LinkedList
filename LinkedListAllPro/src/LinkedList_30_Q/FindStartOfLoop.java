@@ -1,0 +1,91 @@
+package LinkedList_30_Q;
+
+public class FindStartOfLoop {
+
+	nodeLinks<Integer> head;
+
+	public void instertData(int data) {
+		nodeLinks<Integer> newNodeData = new nodeLinks<Integer>(data);
+
+		if (head == null) {
+			head = newNodeData;
+			return;
+		}
+
+		newNodeData.next = head;
+		head = newNodeData;
+	}
+
+	public void createLoop() {
+		nodeLinks<Integer> temp = head;
+		nodeLinks<Integer> loopNode = null;
+
+		while (temp.next != null) {
+
+			if (temp.data == 30) {
+				loopNode = temp;
+			}
+
+			temp = temp.next;
+		}
+
+		temp.next = loopNode; // last node → 30
+	}
+
+	public void printData() {
+		nodeLinks<Integer> temp = head;
+
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+
+	public void findLoopStart() {
+
+		boolean loopCheckList = false;
+
+		nodeLinks<Integer> slowPointer = head;
+		nodeLinks<Integer> fasterPointer = head;
+
+		while (fasterPointer != null && fasterPointer.next != null) {
+			slowPointer = slowPointer.next;
+			fasterPointer = fasterPointer.next.next;
+
+			if (slowPointer == fasterPointer) {
+				loopCheckList = true;
+				break;
+			}
+		}
+
+		if (loopCheckList) {
+			fasterPointer = head;
+			while (slowPointer != fasterPointer) {
+				slowPointer = slowPointer.next;
+				fasterPointer = fasterPointer.next;
+			}
+
+			System.out.println("This is our loop starting Node " + slowPointer + " and Data is " + slowPointer.data);
+		} else {
+			System.out.println("There is no loop in a list");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		FindStartOfLoop obj1 = new FindStartOfLoop();
+		obj1.instertData(10);
+		obj1.instertData(20);
+		obj1.instertData(30);
+		obj1.instertData(40);
+		obj1.instertData(50);
+
+		// obj1.printData(); // OK before loop
+
+		obj1.createLoop(); // comment this → no cycle
+		obj1.findLoopStart();
+
+	}
+
+}

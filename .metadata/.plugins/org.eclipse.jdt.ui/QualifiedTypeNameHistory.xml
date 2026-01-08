@@ -27,6 +27,8 @@
     <fullyQualifiedTypeName name="LinkedList_30_Q.FindMiddleOfLinkedList"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.CheckPalindromeLinkedList"/>
     <fullyQualifiedTypeName name="linkedList.reversList"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.FindNthNodeFromEnd"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.DetectLoopInLinkedList"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.nodeLinks"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>
