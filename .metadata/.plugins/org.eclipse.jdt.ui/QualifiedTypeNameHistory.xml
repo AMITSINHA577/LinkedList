@@ -26,9 +26,17 @@
     <fullyQualifiedTypeName name="LinkedList_30_Q.CountNodesInLinkedList"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.FindMiddleOfLinkedList"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.CheckPalindromeLinkedList"/>
-    <fullyQualifiedTypeName name="linkedList.reversList"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.FindNthNodeFromEnd"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.DetectLoopInLinkedList"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.FindStartOfLoop"/>
     <fullyQualifiedTypeName name="LinkedList_30_Q.nodeLinks"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="LinkedList_30_Q.RemoveLoopFromLinkedList"/>
+    <fullyQualifiedTypeName name="Recursoin.printNumbers"/>
+    <fullyQualifiedTypeName name="Recursoin.FactorialRecursion"/>
+    <fullyQualifiedTypeName name="Recursoin.SumOfNumbersRecursion"/>
+    <fullyQualifiedTypeName name="Recursoin.FibonacciRecursion"/>
+    <fullyQualifiedTypeName name="Recursoin.IsArraySortedRecursion"/>
+    <fullyQualifiedTypeName name="linkedList.reversList"/>
+    <fullyQualifiedTypeName name="Recursoin.BinarySearchRecursion"/>
 </qualifiedTypeNameHistroy>

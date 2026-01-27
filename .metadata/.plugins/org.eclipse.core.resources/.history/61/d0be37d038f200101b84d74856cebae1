@@ -1,0 +1,22 @@
+package Recursoin;
+
+public class IsArraySortedRecursion {
+	
+	public int isSorted(int [] arr, int n) {
+		if(n==1 || n==0) {
+			return true;
+		}
+		
+		if(arr[n-1]>=arr[n-2]) {
+			return false;
+		}
+		
+		return isSorted(arr, n-1);F
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

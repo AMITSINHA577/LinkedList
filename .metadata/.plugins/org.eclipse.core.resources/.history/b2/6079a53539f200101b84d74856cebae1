@@ -1,0 +1,26 @@
+package Recursoin;
+
+public class IsArraySortedRecursion {
+
+	public boolean isSorted(int[] arr, int n) {
+		if (n == 1 || n == 0) {
+			return true;
+		}
+
+		if (arr[n - 1] >= arr[n - 2]) {
+			return false;
+		}
+
+		return isSorted(arr, n - 1);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		IsArraySortedRecursion obj1 = new IsArraySortedRecursion();
+		int[] arr = { 1, 2, 3, 4, 5 };
+		System.out.println(obj1.isSorted(arr, 5));
+
+	}
+
+}
